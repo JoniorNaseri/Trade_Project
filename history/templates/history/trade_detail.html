@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div>
+        <h4>Position: {{ object.trade_type }}</h4>
+        <h4>Result: {{ object.trade_result }}</h4>
+        <h4>Profit/Loss: {{ object.profit_or_loss }}</h4>
+        <h4>Entry Price: {{ object.entry_price }}</h4>
+        <h4>Target 1: {{ object.tp_1 }}</h4>
+        <h4>Target 2: {{ object.tp_2 }}</h4>
+        <h4>StopLoss: {{ object.stop }}</h4>
+        <h4>Explanation: {{ object.explanation }}</h4>
+        <img src="{{ object.chart_day.url }}" alt="" height="400" width="600">
+        <img src="{{ object.chart_hour.url }}" alt="" height="400" width="600">
+        <img src="{{ object.chart_close.url }}" alt="" height="400" width="600">
+    </div>
+</body>
+</html>

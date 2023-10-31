@@ -1,0 +1,21 @@
+{% extends "history/main.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container" style="border: solid 1px;">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{ profile.image.url }}" alt="{{ profile.user.username }}'s profile image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ profile.user.username }}</h5>
+                        <h5>Win Rate: %{{ win_rate | floatformat:2 }}</h2>
+                        <p class="card-text">Email: {{ user.email }}</p>
+                        <h6>Successful: {{ successful_trades }}</h6>
+                        <h6>Failed: {{ failed_trades }}</h6>
+                        <p class="card-text">Bio: {{ profile.bio }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
